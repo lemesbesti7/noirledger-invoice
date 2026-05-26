@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0a0a0f;
+    color: #e5e7eb;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #12121a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a3e;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a4e;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-surface-border rounded-xl p-6;
+  }
+
+  .card-glow {
+    @apply bg-surface border border-surface-border rounded-xl p-6 shadow-glow-purple;
+  }
+
+  .input {
+    @apply w-full bg-noir-950 border border-surface-border rounded-lg px-4 py-3
+           text-gray-100 placeholder-gray-500
+           focus:outline-none focus:border-noir-400 focus:ring-1 focus:ring-noir-400/30
+           transition-colors;
+  }
+
+  .input:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg
+           font-medium transition-all duration-200 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply btn bg-noir-500 hover:bg-noir-600 text-white;
+  }
+
+  .btn-secondary {
+    @apply btn bg-surface-light hover:bg-surface-border text-gray-200 border border-surface-border;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-500/20 hover:bg-red-500/30 text-red-400 border border-red-500/30;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-surface-light text-gray-400 hover:text-gray-200;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-noir-300 to-accent-cyan bg-clip-text text-transparent;
+  }
+
+  .demo-banner {
+    @apply bg-amber-500/10 border border-amber-500/40 text-amber-400
+           px-4 py-3 rounded-lg text-center font-semibold text-sm;
+  }
+}
